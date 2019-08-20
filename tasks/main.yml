@@ -1,7 +1,4 @@
 ---
-- name: import Vault-encrypted variables
-  include_vars: vault.yml
-
 - name: install EPEL repository
   package:
     state: present
