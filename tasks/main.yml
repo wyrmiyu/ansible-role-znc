@@ -35,6 +35,7 @@
     mode: 0644
     seuser: system_u
   notify: restart nginx
+  when: znc_use_nginx
 
 - name: add firewall rule for ZNC port
   firewalld:
@@ -42,6 +43,7 @@
     immediate: yes
     permanent: yes
     state: enabled
+  when: znc_use_firewalld
 
 - name: add LetsEncrypt renewal hook script
   template:
